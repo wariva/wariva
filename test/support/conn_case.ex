@@ -23,6 +23,7 @@ defmodule WarivaWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import WarivaWeb.ConnCase
+      import Phoenix.LiveViewTest
 
       alias WarivaWeb.Router.Helpers, as: Routes
 
