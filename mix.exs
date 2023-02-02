@@ -48,6 +48,7 @@ defmodule Wariva.MixProject do
   defp aliases do
     [
       setup: ["deps.get", "ecto.setup"],
+      "gettext.update": ["gettext.extract", "gettext.merge priv/gettext/"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
