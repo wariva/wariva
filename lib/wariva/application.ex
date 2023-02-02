@@ -12,7 +12,7 @@ defmodule Wariva.Application do
       WarivaWeb.Endpoint
     ]
 
-    Supervisor.start_link(children, [strategy: :one_for_one, name: Wariva.Supervisor])
+    Supervisor.start_link(children, strategy: :one_for_one, name: Wariva.Supervisor)
   end
 
   # Tell Phoenix to update the endpoint configuration

@@ -3,6 +3,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 /* Alerts and form errors used by phx.new */
 .alert {
   padding: 15px;

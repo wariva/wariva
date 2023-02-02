@@ -34,6 +34,7 @@ defmodule Wariva.MixProject do
       {:phoenix_live_view, "~> 0.18.11"},
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.7.2"},
+      {:heroicons, "~> 0.5.2"},
       {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},
