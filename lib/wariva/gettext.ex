@@ -24,4 +24,39 @@ defmodule Wariva.Gettext do
   use Gettext,
     otp_app: :wariva,
     default_locale: "en"
+
+  @supported_locales [
+    %{code: "en", name: "English"},
+    %{code: "es", name: "Español"},
+    %{code: "fr", name: "Français"},
+    %{code: "it", name: "Italiano"},
+    %{code: "pt", name: "Português"}
+  ]
+
+  @type locale :: %{code: String.t(), name: String.t()}
+
+  @spec get_locale(String.t()) :: locale() | nil
+  def get_locale(code) do
+    Enum.find(@supported_locales, &(&1.code == code))
+  end
+
+  @doc "Returns the suported locales."
+  @spec get_supported_locales() :: [locale()]
+  def get_supported_locales do
+    @supported_locales
+  end
+
+  @doc "Sets a given locale if it's supported"
+  @spec put_supported_locale(String.t()) :: nil
+  def put_supported_locale(locale) do
+    if known?(locale) do
+      Gettext.put_locale(locale)
+    end
+  end
+
+  @doc "Verifies if the location is a known location by us."
+  @spec known?(String.t()) :: boolean()
+  def known?(locale) do
+    locale in Gettext.known_locales(__MODULE__)
+  end
 end
