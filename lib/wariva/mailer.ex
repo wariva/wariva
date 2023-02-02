@@ -1,3 +1,6 @@
 defmodule Wariva.Mailer do
-  use Swoosh.Mailer, otp_app: :wariva
+  @moduledoc false
+
+  use Swoosh.Mailer,
+    otp_app: :wariva
 end

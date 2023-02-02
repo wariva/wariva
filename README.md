@@ -1,19 +1,14 @@
-# Wariva
+# Wariva 🐒
 
-To start your Phoenix server:
+Wariva is a delightfully simple async communication platform. It's fast, free, and easy to use, with all the features you need to have a successful community. It's also extremely extensible, allowing for ultimate customizability.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Development
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+To start your server:
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+* Install dependencies with `mix deps.get`
+* Run the database with `docker-compose up -d`
+* Create and migrate your database with `mix ecto.setup`
+* Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+Now you can visit [`https://localhost:4000`](https://localhost:4000) from your browser.

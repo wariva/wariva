@@ -22,7 +22,8 @@ defmodule WarivaWeb do
       use Phoenix.Controller, namespace: WarivaWeb
 
       import Plug.Conn
-      import WarivaWeb.Gettext
+      import Wariva.Gettext
+
       alias WarivaWeb.Router.Helpers, as: Routes
     end
   end
@@ -32,6 +33,8 @@ defmodule WarivaWeb do
       use Phoenix.View,
         root: "lib/wariva_web/templates",
         namespace: WarivaWeb
+
+      import Phoenix.Component
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -45,7 +48,7 @@ defmodule WarivaWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {WarivaWeb.LayoutView, "live.html"}
+        layout: {WarivaWeb.LayoutView, :live}
 
       unquote(view_helpers())
     end
@@ -80,7 +83,8 @@ defmodule WarivaWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import WarivaWeb.Gettext
+
+      import Wariva.Gettext
     end
   end
 
@@ -96,7 +100,8 @@ defmodule WarivaWeb do
       import Phoenix.View
 
       import WarivaWeb.ErrorHelpers
-      import WarivaWeb.Gettext
+      import Wariva.Gettext
+
       alias WarivaWeb.Router.Helpers, as: Routes
     end
   end

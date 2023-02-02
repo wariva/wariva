@@ -39,9 +39,9 @@ defmodule WarivaWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(WarivaWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(Wariva.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(WarivaWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(Wariva.Gettext, "errors", msg, opts)
     end
   end
 end

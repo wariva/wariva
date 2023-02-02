@@ -1,0 +1,22 @@
+version: "3"
+
+volumes:
+  postgres_data: {}
+
+services:
+  postgres:
+    image: postgres:15.1-alpine3.17
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./tmp/docker/postgres/initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "127.0.0.1:1025:1025"
+      - "127.0.0.1:8025:8025"
