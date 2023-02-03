@@ -1,5 +1,8 @@
 defmodule WarivaWeb.Telemetry do
+  @moduledoc false
+
   use Supervisor
+
   import Telemetry.Metrics
 
   def start_link(arg) do
@@ -59,6 +62,7 @@ defmodule WarivaWeb.Telemetry do
     ]
   end
 
+  @spec periodic_measurements :: list()
   defp periodic_measurements do
     [
       # A module, function and arguments to be invoked periodically.

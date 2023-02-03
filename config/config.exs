@@ -9,7 +9,13 @@ import Config
 
 config :wariva,
   ecto_repos: [Wariva.Repo],
-  generators: [binary_id: true]
+  generators: [binary_id: true],
+  content_security_policy: [
+    "default-src 'self' 'unsafe-eval'",
+    "img-src 'self' blob: data: gravatar.com",
+    "style-src 'self' 'unsafe-inline' fonts.googleapis.com",
+    "font-src 'self' fonts.gstatic.com"
+  ]
 
 # Configures the endpoint
 config :wariva, WarivaWeb.Endpoint,

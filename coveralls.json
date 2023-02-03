@@ -1,0 +1,17 @@
+{
+  "coverage_options": {
+    "treat_no_relevant_lines_as_covered": true,
+    "output_dir": "tmp/cover/ex_unit",
+    "minimum_coverage": 100
+  },
+  "skip_files": [
+    "lib/mix/tasks",
+    "lib/wariva_web.ex",
+    "lib/wariva/application.ex",
+    "lib/wariva/release.ex",
+    "lib/wariva_web/router.ex",
+    "lib/wariva_web/telemetry.ex",
+    "lib/wariva_web/views/error_helpers.ex",
+    "test/support"
+  ]
+}
