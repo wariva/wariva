@@ -11,6 +11,17 @@ defmodule Wariva.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.html": :test,
+        "coveralls.github": :test
+      ],
+      dialyzer: [
+        plt_file: {:no_warn, "priv/plts/dialyzer.plt"},
+        plt_add_apps: [:mix, :credo],
+        remove_defaults: [:unknown]
+      ],
       aliases: aliases(),
       deps: deps()
     ]
@@ -35,14 +46,25 @@ defmodule Wariva.MixProject do
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.7.2"},
       {:heroicons, "~> 0.5.2"},
-      {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
-      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      # dev
+      {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
+      # dev & test
+      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
+      {:ex_doc, "~> 0.27", only: [:dev, :test], runtime: false},
+      {:doctor, "~> 0.21.0", only: [:dev, :test]},
+      {:ex_check, "~> 0.14.0", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:sobelow, "~> 0.8", only: [:dev, :test]},
+      {:excoveralls, "~> 0.10", only: [:dev, :test]},
+      # test
+      {:mock, "~> 0.3.0", only: :test}
     ]
   end
 

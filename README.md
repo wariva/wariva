@@ -4,8 +4,8 @@ Wariva is a delightfully simple async communication platform. It's fast, free, a
 
 ## Useful links
 
-* 📜 [Wiki](https://github.com/wariva/wariva/wiki)<br>
-* 👮🏼 [Code of Conduct](https://github.com/wariva/wariva/wiki/Code-of-Conduct)<br>
+* 📜 [Wiki](https://github.com/wariva/wariva/wiki)
+* 👮🏼 [Code of Conduct](https://github.com/wariva/wariva/wiki/Code-of-Conduct)
 * 🐛 [Reporting Bugs](https://github.com/wariva/wariva/wiki/Reporting-Bugs)
 
 ## Development

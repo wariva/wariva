@@ -3,8 +3,8 @@ defmodule WarivaWeb.PageController do
 
   use WarivaWeb, :controller
 
-  @spec index(Plug.Conn.t(), map()) :: Plug.Conn.t()
-  def index(conn, _params) do
-    render(conn, "index.html")
+  @spec home(Plug.Conn.t(), map()) :: Plug.Conn.t()
+  def home(conn, _params) do
+    render(conn, "home.html")
   end
 end
