@@ -1,4 +1,4 @@
-# Wariva 🐒
+# Wariva 🐒 [![Coverage Status](https://coveralls.io/repos/github/wariva/wariva/badge.svg?branch=main)](https://coveralls.io/github/wariva/wariva?branch=main)
 
 Wariva is a delightfully simple async communication platform. It's fast, free, and easy to use, with all the features you need to have a successful community. It's also extremely extensible, allowing for ultimate customizability.
 
