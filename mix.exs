@@ -17,6 +17,11 @@ defmodule Wariva.MixProject do
         "coveralls.html": :test,
         "coveralls.github": :test
       ],
+      dialyzer: [
+        plt_file: {:no_warn, "priv/plts/dialyzer.plt"},
+        plt_add_apps: [:mix, :credo],
+        remove_defaults: [:unknown]
+      ],
       aliases: aliases(),
       deps: deps()
     ]
