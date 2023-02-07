@@ -9,7 +9,7 @@ defmodule Wariva.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [] ++ Mix.compilers(),
+      compilers: Mix.compilers() ++ [],
       start_permanent: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
@@ -17,11 +17,7 @@ defmodule Wariva.MixProject do
         "coveralls.html": :test,
         "coveralls.github": :test
       ],
-      dialyzer: [
-        plt_file: {:no_warn, "priv/plts/dialyzer.plt"},
-        plt_add_apps: [:mix, :credo],
-        remove_defaults: [:unknown]
-      ],
+      dialyzer: dialyzer(),
       aliases: aliases(),
       deps: deps()
     ]
@@ -76,6 +72,14 @@ defmodule Wariva.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"]
+    ]
+  end
+
+  defp dialyzer do
+    [
+      plt_file: {:no_warn, "priv/plts/dialyzer.plt"},
+      plt_add_apps: [:mix, :credo],
+      remove_defaults: [:unknown]
     ]
   end
 
