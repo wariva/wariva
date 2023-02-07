@@ -6,6 +6,7 @@
   },
   "skip_files": [
     "lib/mix/tasks",
+    "lib/wariva.ex",
     "lib/wariva_web.ex",
     "lib/wariva/application.ex",
     "lib/wariva/release.ex",
