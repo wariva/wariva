@@ -31,6 +31,8 @@ RUN mix release
 FROM alpine:3.16.3 AS app
 
 ENV MIX_ENV=prod
+ENV ECTO_IPV6 true
+ENV ERL_AFLAGS "-proto_dist inet6_tcp"
 
 WORKDIR /app
 
@@ -44,3 +46,4 @@ USER nobody
 EXPOSE 4000
 
 CMD ["/app/bin/wariva", "start"]
+
