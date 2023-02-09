@@ -1,5 +1,7 @@
 %Doctor.Config{
   ignore_modules: [
+    Wariva,
+    Wariva.Release,
     WarivaWeb,
     WarivaWeb.Endpoint,
     WarivaWeb.Router,
