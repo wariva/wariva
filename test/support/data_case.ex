@@ -26,6 +26,7 @@ defmodule Wariva.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import Wariva.DataCase
+      import Wariva.Factories
     end
   end
 
