@@ -1,8 +1,6 @@
 defmodule Wariva.Factories do
   @moduledoc false
 
-  alias Wariva.Repo
-
   alias Wariva.Factories.User
 
   def build(:user, params),

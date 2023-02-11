@@ -5,6 +5,19 @@ defmodule Wariva.Accounts.User do
 
   import Wariva.Gettext
 
+  @typedoc "User"
+  @type t :: %__MODULE__{
+          id: binary(),
+          email: binary(),
+          username: binary(),
+          display_name: binary() | nil,
+          bio: binary() | nil,
+          website: binary() | nil,
+          locale: binary() | nil,
+          updated_at: binary(),
+          inserted_at: binary()
+        }
+
   schema "users" do
     field :email, :string
     field :username, :string
