@@ -25,6 +25,8 @@ defmodule WarivaWeb.ConnCase do
       import WarivaWeb.ConnCase
       import Phoenix.LiveViewTest
 
+      import Wariva.Factories
+
       alias WarivaWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
