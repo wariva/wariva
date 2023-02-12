@@ -85,3 +85,8 @@ msgstr "debe ser mayor o igual que %{number}"
 
 msgid "must be equal to %{number}"
 msgstr "debe ser igual a %{number}"
+
+#: lib/wariva/accounts/user.ex:40
+#, elixir-autogen, elixir-format
+msgid "must have the @ sign and no spaces"
+msgstr "debe tener el signo @ y sin espacios"

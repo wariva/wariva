@@ -11,11 +11,6 @@
 msgid ""
 msgstr ""
 
-#: lib/wariva_web/live/home.ex:7
-#, elixir-autogen, elixir-format
-msgid "Home"
-msgstr ""
-
 #: lib/wariva_web/live/accounts/register.ex:7
 #, elixir-autogen, elixir-format
 msgid "Register"

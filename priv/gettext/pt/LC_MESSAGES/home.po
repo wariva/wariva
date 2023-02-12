@@ -11,7 +11,78 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);"
 
-#: lib/wariva_web/live/home.ex:22
+#: lib/wariva_web/templates/page/home.html.heex:135
 #, elixir-autogen, elixir-format
-msgid "Log In"
-msgstr "Entrar"
+msgid "All rights reserved."
+msgstr "Todos os direitos reservados."
+
+#: lib/wariva_web/templates/page/home.html.heex:102
+#, elixir-autogen, elixir-format
+msgid "Company"
+msgstr "Empresa"
+
+#: lib/wariva_web/templates/page/home.html.heex:31
+#, elixir-autogen, elixir-format
+msgid "Get started"
+msgstr "Iniciar"
+
+#: lib/wariva_web/templates/page/home.html.heex:91
+#, elixir-autogen, elixir-format
+msgid "Guides"
+msgstr "Guias"
+
+#: lib/wariva_web/templates/page/home.html.heex:20
+#, elixir-autogen, elixir-format
+msgid "Just shipped"
+msgstr "Lançado"
+
+#: lib/wariva_web/templates/page/home.html.heex:32
+#, elixir-autogen, elixir-format
+msgid "Learn more"
+msgstr "Saber mais"
+
+#: lib/wariva_web/templates/page/home.html.heex:116
+#, elixir-autogen, elixir-format
+msgid "Legal"
+msgstr "Legal"
+
+#: lib/wariva_web/templates/page/home.html.heex:28
+#: lib/wariva_web/templates/page/home.html.heex:55
+#, elixir-autogen, elixir-format
+msgid "Messaging made simple for small businesses."
+msgstr "Mensagens simplificadas para pequenas empresas."
+
+#: lib/wariva_web/templates/page/home.html.heex:120
+#, elixir-autogen, elixir-format
+msgid "Privacy"
+msgstr "Privacidade"
+
+#: lib/wariva_web/templates/page/home.html.heex:75
+#, elixir-autogen, elixir-format
+msgid "Solutions"
+msgstr "Soluções"
+
+#: lib/wariva_web/templates/page/home.html.heex:84
+#, elixir-autogen, elixir-format
+msgid "Support"
+msgstr "Suporte"
+
+#: lib/wariva_web/templates/page/home.html.heex:126
+#, elixir-autogen, elixir-format
+msgid "Terms"
+msgstr "Termos"
+
+#: lib/wariva_web/templates/page/home.html.heex:29
+#, elixir-autogen, elixir-format
+msgid "Wariva is a delightfully simple async communication platform. It's fast, free, and easy to use. With all the features you need to have a successful community. It's also extremely extensible, allowing for ultimate customizability."
+msgstr "Wariva é uma plataforma de comunicação assíncrona incrívelmente simples. É rápido, gratuito e fácil de usar. Com todos os recursos que você precisa para ter uma comunidade de sucesso. Também é extremamente extensível, permitindo a personalização final."
+
+#: lib/wariva_web/templates/page/home.html.heex:18
+#, elixir-autogen, elixir-format
+msgid "What's new"
+msgstr "O que há de novo"
+
+#: lib/wariva_web/templates/page/home.html.heex:107
+#, elixir-autogen, elixir-format
+msgid "About"
+msgstr "Sobre"

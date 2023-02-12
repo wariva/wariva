@@ -11,43 +11,43 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/wariva_web/live/accounts/register.ex:44
+#: lib/wariva_web/live/accounts/register.ex:49
 #, elixir-autogen, elixir-format
 msgid "Already have an account?"
 msgstr ""
 
-#: lib/wariva_web/live/accounts/sign_in.ex:41
+#: lib/wariva_web/live/accounts/sign_in.ex:44
 #, elixir-autogen, elixir-format
 msgid "Don't have an account?"
 msgstr ""
 
-#: lib/wariva_web/live/accounts/register.ex:25
+#: lib/wariva_web/live/accounts/register.ex:30
 #, elixir-autogen, elixir-format
 msgid "Name"
 msgstr ""
 
-#: lib/wariva_web/live/accounts/register.ex:39
-#: lib/wariva_web/live/accounts/sign_in.ex:41
+#: lib/wariva_web/live/accounts/register.ex:44
+#: lib/wariva_web/live/accounts/sign_in.ex:44
 #, elixir-autogen, elixir-format
 msgid "Register"
 msgstr ""
 
-#: lib/wariva_web/live/accounts/register.ex:18
+#: lib/wariva_web/live/accounts/register.ex:23
 #, elixir-autogen, elixir-format
 msgid "Register a new account"
 msgstr ""
 
-#: lib/wariva_web/live/accounts/sign_in.ex:36
-#, elixir-autogen, elixir-format
-msgid "Sign In"
-msgstr ""
-
-#: lib/wariva_web/live/accounts/register.ex:44
+#: lib/wariva_web/live/accounts/register.ex:49
 #, elixir-autogen, elixir-format
 msgid "Sign in"
 msgstr ""
 
-#: lib/wariva_web/live/accounts/sign_in.ex:21
+#: lib/wariva_web/live/accounts/sign_in.ex:25
 #, elixir-autogen, elixir-format
 msgid "Sign in to your account"
+msgstr ""
+
+#: lib/wariva_web/live/accounts/sign_in.ex:39
+#, elixir-autogen, elixir-format
+msgid "Login"
 msgstr ""

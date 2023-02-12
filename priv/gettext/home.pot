@@ -11,7 +11,78 @@
 msgid ""
 msgstr ""
 
-#: lib/wariva_web/live/home.ex:22
+#: lib/wariva_web/templates/page/home.html.heex:135
 #, elixir-autogen, elixir-format
-msgid "Log In"
+msgid "All rights reserved."
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:102
+#, elixir-autogen, elixir-format
+msgid "Company"
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:31
+#, elixir-autogen, elixir-format
+msgid "Get started"
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:91
+#, elixir-autogen, elixir-format
+msgid "Guides"
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:20
+#, elixir-autogen, elixir-format
+msgid "Just shipped"
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:32
+#, elixir-autogen, elixir-format
+msgid "Learn more"
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:116
+#, elixir-autogen, elixir-format
+msgid "Legal"
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:28
+#: lib/wariva_web/templates/page/home.html.heex:55
+#, elixir-autogen, elixir-format
+msgid "Messaging made simple for small businesses."
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:120
+#, elixir-autogen, elixir-format
+msgid "Privacy"
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:75
+#, elixir-autogen, elixir-format
+msgid "Solutions"
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:84
+#, elixir-autogen, elixir-format
+msgid "Support"
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:126
+#, elixir-autogen, elixir-format
+msgid "Terms"
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:29
+#, elixir-autogen, elixir-format
+msgid "Wariva is a delightfully simple async communication platform. It's fast, free, and easy to use. With all the features you need to have a successful community. It's also extremely extensible, allowing for ultimate customizability."
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:18
+#, elixir-autogen, elixir-format
+msgid "What's new"
+msgstr ""
+
+#: lib/wariva_web/templates/page/home.html.heex:107
+#, elixir-autogen, elixir-format
+msgid "About"
 msgstr ""

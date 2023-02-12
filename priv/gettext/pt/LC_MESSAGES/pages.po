@@ -11,11 +11,6 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);"
 
-#: lib/wariva_web/live/home.ex:7
-#, elixir-autogen, elixir-format
-msgid "Home"
-msgstr "Início"
-
 #: lib/wariva_web/live/accounts/register.ex:7
 #, elixir-autogen, elixir-format
 msgid "Register"
