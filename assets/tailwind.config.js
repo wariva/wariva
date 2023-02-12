@@ -12,7 +12,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
-        cursive: ['Itim', 'cursive']
+        cursive: ['Itim', 'cursive'],
+        display: ['Lexend', ...defaultTheme.fontFamily.sans]
       }
     },
   },
