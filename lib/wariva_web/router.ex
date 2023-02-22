@@ -25,6 +25,8 @@ defmodule WarivaWeb.Router do
 
     get "/", PageController, :home
 
+    get "/app", AppPageController, :app
+
     live "/signin", Live.Accounts.SignIn
     live "/register", Live.Accounts.Register
   end
