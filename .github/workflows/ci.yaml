@@ -1,4 +1,4 @@
-name: Elixir
+name: CI
 
 # TODO: remove `main_1_7` when we change that to main
 on:
@@ -11,8 +11,8 @@ permissions:
   contents: read
 
 jobs:
-  build:
-    name: Build with otp ${{matrix.otp}} and elixir ${{matrix.elixir}}
+  ci:
+    name: Build & Test - OTP ${{matrix.otp}} / Elixir ${{matrix.elixir}}
     runs-on: ubuntu-latest
 
     strategy:
@@ -31,6 +31,9 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
     - name: Set up Elixir
