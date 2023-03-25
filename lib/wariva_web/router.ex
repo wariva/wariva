@@ -18,10 +18,6 @@ defmodule WarivaWeb.Router do
     plug :put_secure_browser_headers, %{"content-security-policy" => @csp}
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", WarivaWeb do
     pipe_through :browser
 
