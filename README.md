@@ -16,3 +16,8 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+# Running Observability Stack
+
+- Install loki docker driver with `docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions`
+- Run `docker-compose up -d`

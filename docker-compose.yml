@@ -2,6 +2,11 @@ version: "3"
 
 volumes:
   postgres_data: {}
+  prometheus_data: {}
+  grafana_data: {}
+  loki_data: {}
+  tempo_data: {}
+  promtail_data: {}
 
 services:
   postgres:
@@ -13,3 +18,68 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+
+  grafana:
+    image: grafana/grafana:8.5.22
+    ports:
+      - '3000:3000'
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./dev/grafana/:/etc/grafana/provisioning/
+    logging:
+      driver: loki
+      options:
+        loki-url: 'http://loki:loki@localhost:3100/loki/api/v1/push'
+
+  prometheus:
+    image: prom/prometheus:v2.43.0
+    volumes:
+      - ./dev/prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    ports:
+      - 9090:9090
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    logging:
+      driver: loki
+      options:
+        loki-url: 'http://loki:loki@localhost:3100/loki/api/v1/push'
+
+  loki:
+    image: grafana/loki:2.7.4
+    volumes:
+      - ./dev/loki/loki-config.yml:/etc/loki/loki-config.yml
+      - loki_data:/tmp/loki
+    expose:
+      - 3100
+    ports:
+      - '3100:3100'
+    command: '-config.file=/etc/loki/loki-config.yml'
+
+  promtail:
+    image: grafana/promtail:2.7.4
+    volumes:
+      - ./dev/promtail/promtail.yaml:/etc/promtail/config.yaml
+      - type: bind
+        source: ./tmp/logs/
+        target: /tmp/host-logs/
+        read_only: true
+    command: -config.file=/etc/promtail/config.yaml
+    ports:
+      - 9080:9080
+    depends_on:
+      - loki
+
+  tempo:
+    image: grafana/tempo:2.0.1
+    command: [ "-config.file=/etc/tempo.yaml" ]
+    volumes:
+      - ./dev/tempo/tempo.yaml:/etc/tempo.yaml
+      - tempo_data:/tmp/tempo
+    logging:
+      driver: loki
+      options:
+        loki-url: 'http://loki:loki@localhost:3100/loki/api/v1/push'

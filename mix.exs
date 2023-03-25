@@ -43,7 +43,7 @@ defmodule Wariva.MixProject do
     [
       {:ecto_sql, "~> 3.6"},
       {:esbuild, "~> 0.7", runtime: Mix.env() == :dev},
-      {:finch, "~> 0.13"},
+      {:finch, "~> 0.13", override: true},
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:phoenix_ecto, "~> 4.4"},
@@ -51,12 +51,16 @@ defmodule Wariva.MixProject do
       {:phoenix_live_dashboard, "~> 0.7.2"},
       {:phoenix_live_view, "~> 0.18.16"},
       {:phoenix, "~> 1.7.2"},
-      {:plug_cowboy, "~> 2.5"},
+      {:plug_cowboy, "~> 2.5", override: true},
       {:postgrex, ">= 0.0.0"},
+      {:prom_ex, "~> 1.7.0"},
+      {:structured_logger, github: "bamorim/structured_logger"},
       {:swoosh, "~> 1.3"},
       {:tailwind, "~> 0.2.0", runtime: Mix.env() == :dev},
+      {:telemetry_logger, github: "bamorim/telemetry_logger"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
+      {:telemetry, "~> 1.2.1", override: true},
       # Dev and test dependencies
       {:credo, "~> 1.7", only: [:dev], runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
@@ -67,6 +71,7 @@ defmodule Wariva.MixProject do
       {:floki, "~> 0.34.0", only: :test},
       {:mix_audit, "~> 2.0", only: [:dev, :test], runtime: false},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:logger_file_backend, "~> 0.0.10", only: :dev},
       {:sobelow, "~> 0.11", only: [:dev, :test], runtime: false}
     ]
   end

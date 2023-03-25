@@ -65,9 +65,6 @@ config :wariva, WarivaWeb.Endpoint,
 # Enable dev routes for dashboard and mailbox
 config :wariva, dev_routes: true
 
-# Do not include metadata nor timestamps in development logs
-config :logger, :console, format: "[$level] $message\n"
-
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
@@ -77,3 +74,12 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
+
+# Also log to a file to make testing with Grafana Stack easier
+config :logger,
+  backends: [:console, {LoggerFileBackend, :file_logger}]
+
+config :logger, :file_logger,
+  format: {StructuredLogger, :format},
+  metadata: :all,
+  path: "tmp/logs/elixir.log"
