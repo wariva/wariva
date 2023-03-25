@@ -21,46 +21,38 @@ services:
 
   grafana:
     image: grafana/grafana:8.5.22
+    profiles: [ "o11y" ]
     ports:
-      - '3000:3000'
+      - 3000:3000
     volumes:
       - grafana_data:/var/lib/grafana
       - ./dev/grafana/:/etc/grafana/provisioning/
-    logging:
-      driver: loki
-      options:
-        loki-url: 'http://loki:loki@localhost:3100/loki/api/v1/push'
 
   prometheus:
     image: prom/prometheus:v2.43.0
+    profiles: [ "o11y" ]
     volumes:
       - ./dev/prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
     ports:
       - 9090:9090
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    logging:
-      driver: loki
-      options:
-        loki-url: 'http://loki:loki@localhost:3100/loki/api/v1/push'
 
   loki:
     image: grafana/loki:2.7.4
+    profiles: [ "o11y" ]
     volumes:
       - ./dev/loki/loki-config.yml:/etc/loki/loki-config.yml
       - loki_data:/tmp/loki
-    expose:
-      - 3100
-    ports:
-      - '3100:3100'
-    command: '-config.file=/etc/loki/loki-config.yml'
+    command: "-config.file=/etc/loki/loki-config.yml"
 
   promtail:
     image: grafana/promtail:2.7.4
+    profiles: [ "o11y" ]
     volumes:
       - ./dev/promtail/promtail.yaml:/etc/promtail/config.yaml
       - type: bind
@@ -75,11 +67,8 @@ services:
 
   tempo:
     image: grafana/tempo:2.0.1
+    profiles: [ "o11y" ]
     command: [ "-config.file=/etc/tempo.yaml" ]
     volumes:
       - ./dev/tempo/tempo.yaml:/etc/tempo.yaml
       - tempo_data:/tmp/tempo
-    logging:
-      driver: loki
-      options:
-        loki-url: 'http://loki:loki@localhost:3100/loki/api/v1/push'

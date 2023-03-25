@@ -19,5 +19,10 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 # Running Observability Stack
 
-- Install loki docker driver with `docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions`
+- Enable `o11y` profile for docker compose by setting `COMPOSE_PROFILES=o11y`
 - Run `docker-compose up -d`
+- Now you have:
+  - Grafana on http://localhost:3000/
+  - Prometheus on http://localhost:9090/
+  - Promtail on http://localhost:9080/
+  - Tempo on http://localhost:3100/
