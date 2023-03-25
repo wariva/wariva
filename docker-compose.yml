@@ -55,6 +55,7 @@ services:
     profiles: [ "o11y" ]
     volumes:
       - ./dev/promtail/promtail.yaml:/etc/promtail/config.yaml
+      - promtail_data:/tmp/promtail
       - type: bind
         source: ./tmp/logs/
         target: /tmp/host-logs/
@@ -69,6 +70,8 @@ services:
     image: grafana/tempo:2.0.1
     profiles: [ "o11y" ]
     command: [ "-config.file=/etc/tempo.yaml" ]
+    ports:
+      - 4317:4317
     volumes:
       - ./dev/tempo/tempo.yaml:/etc/tempo.yaml
       - tempo_data:/tmp/tempo

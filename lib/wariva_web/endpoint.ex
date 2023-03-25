@@ -47,5 +47,18 @@ defmodule WarivaWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+
+  plug :set_logger_trace_id
+
+  def set_logger_trace_id(conn, _opts) do
+    span_ctx = OpenTelemetry.Tracer.current_span_ctx()
+
+    if span_ctx != :undefined do
+      Logger.metadata(trace_id: OpenTelemetry.Span.hex_trace_id(span_ctx))
+    end
+
+    conn
+  end
+
   plug WarivaWeb.Router
 end

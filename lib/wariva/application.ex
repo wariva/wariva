@@ -7,6 +7,10 @@ defmodule Wariva.Application do
 
   @impl Application
   def start(_type, _args) do
+    OpentelemetryEcto.setup([:wariva, :repo])
+    OpentelemetryPhoenix.setup()
+    OpentelemetryLiveView.setup()
+
     TelemetryLogger.attach_loggers([
       {PlugLogger, router: WarivaWeb.Router}
     ])
