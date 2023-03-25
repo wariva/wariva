@@ -3,8 +3,14 @@ defmodule Wariva.Application do
 
   use Application
 
+  alias TelemetryLoggers.PlugLogger
+
   @impl Application
   def start(_type, _args) do
+    TelemetryLogger.attach_loggers([
+      {PlugLogger, router: WarivaWeb.Router}
+    ])
+
     children = [
       Wariva.PromEx,
       WarivaWeb.Telemetry,
