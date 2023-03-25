@@ -1,7 +1,7 @@
 defmodule Wariva.MixProject do
   use Mix.Project
 
-  @excoveralls_tasks ~w(coveralls coveralls.github coveralls.html coveralls.json)
+  @excoveralls_tasks ~w(coveralls coveralls.github coveralls.html)
 
   def project do
     [
@@ -58,10 +58,10 @@ defmodule Wariva.MixProject do
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       # Dev and test dependencies
-      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
-      {:doctor, "~> 0.21.0", only: [:dev, :test]},
-      {:ex_check, "~> 0.14.0", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.7", only: [:dev], runtime: false},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:doctor, "~> 0.21.0", only: :dev},
+      {:ex_check, "~> 0.14.0", only: [:dev], runtime: false},
       {:ex_doc, "~> 0.27", only: :dev, runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
       {:floki, "~> 0.34.0", only: :test},
