@@ -1,12 +1,14 @@
 defmodule WarivaWeb.Telemetry do
+  @moduledoc false
   use Supervisor
   import Telemetry.Metrics
 
+  @spec start_link(term()) :: Supervisor.on_start()
   def start_link(arg) do
     Supervisor.start_link(__MODULE__, arg, name: __MODULE__)
   end
 
-  @impl true
+  @impl Supervisor
   def init(_arg) do
     children = [
       # Telemetry poller will execute the given period measurements
@@ -19,6 +21,10 @@ defmodule WarivaWeb.Telemetry do
     Supervisor.init(children, strategy: :one_for_one)
   end
 
+  @doc """
+  Defines a set of Telemetry.Metrics to be used by the Phoenix Dashboard.
+  """
+  @spec metrics() :: [Telemetry.Metrics.t()]
   def metrics do
     [
       # Phoenix Metrics
@@ -82,6 +88,7 @@ defmodule WarivaWeb.Telemetry do
     ]
   end
 
+  @spec periodic_measurements() :: [:telemetry_poller.measurement()]
   defp periodic_measurements do
     [
       # A module, function and arguments to be invoked periodically.

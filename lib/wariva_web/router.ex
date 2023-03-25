@@ -1,17 +1,21 @@
 defmodule WarivaWeb.Router do
   use WarivaWeb, :router
 
+  @csp [
+         "default-src 'self' 'unsafe-eval'",
+         "img-src 'self' blob: data: gravatar.com",
+         "style-src 'self' 'unsafe-inline' fonts.googleapis.com",
+         "font-src 'self' fonts.gstatic.com"
+       ]
+       |> Enum.join("; ")
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
     plug :put_root_layout, {WarivaWeb.Layouts, :root}
     plug :protect_from_forgery
-    plug :put_secure_browser_headers
-  end
-
-  pipeline :api do
-    plug :accepts, ["json"]
+    plug :put_secure_browser_headers, %{"content-security-policy" => @csp}
   end
 
   scope "/", WarivaWeb do
