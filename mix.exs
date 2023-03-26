@@ -28,7 +28,7 @@ defmodule Wariva.MixProject do
   def application do
     [
       mod: {Wariva.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :hackney, :runtime_tools]
     ]
   end
 
