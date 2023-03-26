@@ -77,9 +77,12 @@ config :swoosh, :api_client, false
 
 # Also log to a file to make testing with Grafana Stack easier
 config :logger,
-  backends: [:console, {LoggerFileBackend, :file_logger}]
+  backends: [:console, LokiLogger]
 
-config :logger, :file_logger,
+config :logger, :loki_logger,
+  level: :debug,
   format: {StructuredLogger, :format},
   metadata: :all,
-  path: "tmp/logs/elixir.log"
+  max_buffer: 0,
+  loki_labels: %{application: "wariva", elixir_node: node()},
+  loki_host: "http://localhost:3100"

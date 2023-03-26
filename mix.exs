@@ -28,7 +28,7 @@ defmodule Wariva.MixProject do
   def application do
     [
       mod: {Wariva.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :loki_logger, :runtime_tools]
     ]
   end
 
@@ -76,7 +76,7 @@ defmodule Wariva.MixProject do
       {:floki, "~> 0.34.0", only: :test},
       {:mix_audit, "~> 2.0", only: [:dev, :test], runtime: false},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:logger_file_backend, "~> 0.0.10", only: :dev},
+      {:loki_logger, github: "bamorim/LokiLogger", branch: "use-new-push-api", only: :dev},
       {:sobelow, "~> 0.11", only: [:dev, :test], runtime: false}
     ]
   end

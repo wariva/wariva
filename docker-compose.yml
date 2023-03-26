@@ -49,22 +49,8 @@ services:
       - ./dev/loki/loki-config.yml:/etc/loki/loki-config.yml
       - loki_data:/tmp/loki
     command: "-config.file=/etc/loki/loki-config.yml"
-
-  promtail:
-    image: grafana/promtail:2.7.4
-    profiles: [ "o11y" ]
-    volumes:
-      - ./dev/promtail/promtail.yaml:/etc/promtail/config.yaml
-      - promtail_data:/tmp/promtail
-      - type: bind
-        source: ./tmp/logs/
-        target: /tmp/host-logs/
-        read_only: true
-    command: -config.file=/etc/promtail/config.yaml
     ports:
-      - 9080:9080
-    depends_on:
-      - loki
+      - 3100:3100
 
   tempo:
     image: grafana/tempo:2.0.1
