@@ -8,6 +8,7 @@
     "test/support",
     "lib/wariva/application.ex",
     "lib/wariva_web/telemetry.ex",
-    "lib/wariva_web/components/core_components.ex"
+    "lib/wariva_web/components/core_components.ex",
+    "lib/wariva/prom_ex.ex"
   ]
 }

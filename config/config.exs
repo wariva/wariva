@@ -53,11 +53,21 @@ config :tailwind,
 
 # Configures Elixir's Logger
 config :logger, :console,
-  format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id]
+  format: {StructuredLogger, :format},
+  metadata: :all
 
 # Use Jason for JSON parsing in Phoenix
-config :phoenix, :json_library, Jason
+config :phoenix,
+  json_library: Jason,
+  logger: false
+
+# We won't integrate with PromEx directly
+config :wariva, Wariva.PromEx,
+  disabled: false,
+  manual_metrics_start_delay: :no_delay,
+  drop_metrics_groups: [],
+  grafana: :disabled,
+  metrics_server: [port: 9091]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
