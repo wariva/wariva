@@ -59,10 +59,10 @@ defmodule Wariva.MixProject do
       {:plug_cowboy, "~> 2.5", override: true},
       {:postgrex, ">= 0.0.0"},
       {:prom_ex, "~> 1.7.0"},
-      {:structured_logger, github: "bamorim/structured_logger"},
+      {:structured_logger, "~> 0.0.1"},
       {:swoosh, "~> 1.3"},
       {:tailwind, "~> 0.2.0", runtime: Mix.env() == :dev},
-      {:telemetry_logger, github: "bamorim/telemetry_logger"},
+      {:telemetry_logger, "~> 0.0.1"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:telemetry, "~> 1.2.1", override: true},
@@ -76,7 +76,7 @@ defmodule Wariva.MixProject do
       {:floki, "~> 0.34.0", only: :test},
       {:mix_audit, "~> 2.0", only: [:dev, :test], runtime: false},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:loki_logger, github: "bamorim/LokiLogger", branch: "use-new-push-api", only: :dev},
+      {:logger_loki_backend, "~> 0.0.1", only: :dev},
       {:sobelow, "~> 0.11", only: [:dev, :test], runtime: false}
     ]
   end

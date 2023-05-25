@@ -77,9 +77,9 @@ config :swoosh, :api_client, false
 
 # Also log to a file to make testing with Grafana Stack easier
 config :logger,
-  backends: [:console, LokiLogger]
+  backends: [:console, LoggerLokiBackend]
 
-config :logger, :loki_logger,
+config :logger, :logger_loki_backend,
   level: :debug,
   format: {StructuredLogger, :format},
   metadata: :all,
